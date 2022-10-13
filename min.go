@@ -12,8 +12,8 @@ import (
 )
 
 func main() {
-	os.Setenv("SLACK_BOT_TOKEN", "xoxb-4223055417137-4210362238771-EU0JvRmqzgkm6h8fGeklRUbL")
-	os.Setenv("SLACK_APP_TOKEN", "xapp-1-A0466A25SUB-4223064730289-086b7a48f4da1c7200fa3e11b341dea9c9d40fcf315b10574b2778aa8bbaf9c9")
+	os.Setenv("SLACK_BOT_TOKEN", "xoxb-4223055417137-4210362238771-9VOmbUzuKW6SixBA7GqMXApu")
+	os.Setenv("SLACK_APP_TOKEN", "xapp-1-A0466A25SUB-4204274003814-adb0846a3f5fb5338553620c6dde06ee2b4336164d34d6e3551b559523b4de7c")
 
 	bot := slacker.NewClient(os.Getenv("SLACK_BOT_TOKEN"), os.Getenv("SLACK_APP_TOKEN"))
 
@@ -21,7 +21,7 @@ func main() {
 
 	bot.Command("my yob is <year>", &slacker.CommandDefinition{
 		Description: "yob calculator",
-		Examples:    []string{"my yob is 2020"},
+		Examples:    []string{"my yob is 2020", "Atau contoh ini"},
 		Handler: func(botCtx slacker.BotContext, request slacker.Request, response slacker.ResponseWriter) {
 			year := request.Param("year")
 			yob, err := strconv.Atoi(year)
